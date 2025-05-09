@@ -19,7 +19,7 @@ jobs:
         run: docker build -t my-web-image:latest .
 
       - name: RUN docker container
-        run: docker -d -p 8080:80 my-web-image:latest 
+        run: docker -p 8080:80 my-web-image:latest 
 
       - name: Wait for the website to up
         run: sleep 30s

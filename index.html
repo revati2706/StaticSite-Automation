@@ -2,98 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HighTech Prompt Generator</title>
-  <h1>THIS IS MY FIRST TIME TO USE GITHUB ACTION I HOPW IT WILL GO SMOOTH</h1>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Unfilled Heart</title>
   <style>
+    /* Background: soft coffee gradient */
     body {
       margin: 0;
       padding: 0;
-      background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #ffffff;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom right, #d7ccc8, #a1887f, #4e342e);
+      color: #3e2723;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.75);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      max-width: 700px;
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 20px;
-      background: linear-gradient(90deg, #00c6ff, #0072ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #4e342e;
     }
 
-    .prompt-box {
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid #00c6ff;
-      padding: 30px;
-      border-radius: 15px;
-      width: 90%;
-      max-width: 600px;
-      box-shadow: 0 0 20px rgba(0, 198, 255, 0.3);
-    }
-
-    input, button {
-      width: 100%;
-      padding: 10px;
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
       margin: 10px 0;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
     }
 
-    input {
-      background-color: #2c3e50;
-      color: #ffffff;
-    }
-
-    button {
-      background: linear-gradient(to right, #00c6ff, #0072ff);
-      color: white;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    button:hover {
-      background: linear-gradient(to right, #0072ff, #00c6ff);
-    }
-
-    .output {
-      margin-top: 20px;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 15px;
-      border-radius: 8px;
+    .author {
+      margin-top: 30px;
       font-style: italic;
-      color: #00e6e6;
+      color: #5d4037;
     }
   </style>
 </head>
 <body>
-  <h1>HighTech Prompt Generator</h1>
-  <div class="prompt-box">
-    <input type="text" id="userInput" placeholder="Type your idea...">
-    <button onclick="generatePrompt()">Generate Prompt</button>
-    <div class="output" id="outputBox"></div>
+  <div class="container">
+    <h1>The Unfilled Heart</h1>
+    <p>In silence deep, it softly beats,</p>
+    <p>A hollow thrum, where joy retreats.</p>
+    <p>It longs for light, for warmth once known,</p>
+    <p>Yet walks a path so much alone.</p>
+
+    <p>Not broken — no, but never whole,</p>
+    <p>A quiet ache within the soul.</p>
+    <p>It held out hands, received the air,</p>
+    <p>And found no comfort waiting there.</p>
+
+    <p>Still, it hopes in subtle hues,</p>
+    <p>Of whispered words and morning dews.</p>
+    <p>One day, perhaps, love may impart,</p>
+    <p>The piece to fill this unfilled heart.</p>
+
+    <div class="author">– Anonymous</div>
   </div>
-
-  <script>
-    function generatePrompt() {
-      const input = document.getElementById('userInput').value;
-      const outputBox = document.getElementById('outputBox');
-      
-      if (input.trim() === '') {
-        outputBox.innerText = 'Please enter an idea to generate a prompt.';
-        return;
-      }
-
-      const basePrompt = `Create a futuristic, high-tech solution for: "${input}"`;
-      outputBox.innerText = basePrompt;
-    }
-  </script>
 </body>
 </html>
-

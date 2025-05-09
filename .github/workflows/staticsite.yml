@@ -34,5 +34,5 @@ jobs:
         run: curl http://localhost:8080
         
       - name: stop docker container
-        run: docker ps -q | xarg docker stop
+        run: docker ps -q | xargs docker stop
         

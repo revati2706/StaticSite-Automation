@@ -1,31 +1,25 @@
-name : "action"
-
+name: "action"
 
 on: 
   push:
-     branches: [ main ]
-  
-     
+    branches: [main]
 
 jobs:
-   build:
-      runs-on: ubuntu-lates
-      steps:
-          - name: checkout repository
-            uses: action/checkout@v3
-            
-          - name: set up Docker buildx
-            uses: docker/setup-buildx-action@v3
-            with:
-              username: ${{secrets.DOCKER_USERNAME}}
-              password: ${{secrets.DOCKER_PASSWORD}}
-              
-            
-          - name: build Docker image
-            run: docker build -t my-web-image:latest .
-          - name: push image into docker hub
-            run:  docker push my-web-image:latest 
-            
-            
-    
-   
+  build:
+    runs-on: ubuntu-latest  # Corrected typo here
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3  # Correct action name
+
+      - name: Set up Docker buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build Docker image
+        run: docker build -t my-web-image:latest .
+
+      - name: Push image to Docker Hub
+        run: docker push my-web-image:latest

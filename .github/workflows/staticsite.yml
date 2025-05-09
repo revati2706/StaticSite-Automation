@@ -25,7 +25,7 @@ jobs:
 
 
       - name: Run Docker container
-        run: docker run --publish 8080:80 my-web-image:latest
+        run: docker run -d --publish 8080:80 my-web-image:latest
 
       - name: Wait for the website to up
         run: sleep 30s

@@ -14,12 +14,18 @@ jobs:
       
       - name: Set up Docker buildx
         uses: docker/setup-buildx-action@v3
-
+        with:
+           version: latest
+           
       - name: Build Docker image
         run: docker build -t my-web-image:latest .
 
+      - name: Check Docker version
+        run: docker --version
+
+
       - name: RUN docker container
-        run: docker -p 8080:80 my-web-image:latest 
+        run: docker --publish 8080:80 my-web-image:latest 
 
       - name: Wait for the website to up
         run: sleep 30s
